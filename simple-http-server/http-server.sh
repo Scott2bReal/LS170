@@ -20,7 +20,7 @@ function server () {
     then
       if [[ -f ./www/$path ]]
       then
-        echo -en "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\nContent-Length: `wc -c ./www/$path`\r\n\r\n"; cat ./www/$path
+        echo -en "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\nContent-Length: $(wc -c ./www/$path)\r\n\r\n"; cat ./www/$path
       else
         echo -en "HTTP/1.1 404 Not Found\r\nContent-Length: 0\r\n\r\n"
       fi
